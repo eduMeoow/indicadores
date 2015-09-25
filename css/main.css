@@ -3,7 +3,7 @@ html {
 body {
 	background-color: lightblue;
 }
-.content-indicator {
+#content-indicator {
 	/* padding: ; */
 }
 .widget {
@@ -64,4 +64,63 @@ body {
 /* Cambios... */
 .col-md-3:nth-of-type(1) {
 	padding-top: 10px;
+}
+.table {
+	background: #181818;
+	color: #fff;
+	position: absolute;
+	height: 500px;
+	width: 100%;
+	top: -576px;
+	left: 0;
+	padding: 20px;
+	transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.table h1 {
+	color: #fff;
+}
+#toggle {
+	position: absolute;
+	appearance: none;
+	cursor: pointer;
+	left: -100%;
+	top: -100%;
+}
+#toggle + label {
+	position: absolute;
+	cursor: pointer;
+	padding: 10px;
+	background: #25ae90;
+	width: 100px;
+	border-radius: 3px;
+	padding: 8px 10px;
+	color: #fff;
+	line-height: 20px;
+	font-size: 12px;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	cursor: pointer;
+	margin: 20px 50px;
+	transition: all 500ms ease;
+}
+#toggle + label:after {
+	content: "Open";
+}
+.container {
+	transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+	padding-top: 5em;
+}
+#toggle:checked ~ .table {
+	top: 0;
+}
+#toggle:checked ~ .container {
+	margin-top: 576px;
+}
+#toggle:checked + label {
+	background: #dd6149;
+}
+#toggle:checked + label:after {
+	content: "Close"
 }
